@@ -5,7 +5,7 @@ module:
 
 params:
     mainSections:
-        - post
+      - post
     featuredImageField: image
     rssFullContent: true
     favicon:
@@ -13,6 +13,7 @@ params:
     footer:
         since:
         customText:
+
 
     dateFormat:
         published: Jan 02, 2006
@@ -32,6 +33,7 @@ params:
         math: false
         toc: true
         readingTime: true
+        wordCount: true
         license:
             enabled: false
             default: Licensed under CC BY-NC-SA 4.0
@@ -47,21 +49,25 @@ params:
             admin:
             adminLabel:
 
+
         utterances:
             repo:
             issueTerm: pathname
             label:
 
+
         beaudar:
             repo:
             issueTerm: pathname
             label:
-            theme:        
+            theme:
+
 
         remark42:
             host:
             site:
             locale:
+
 
         vssue:
             platform:
@@ -78,19 +84,21 @@ params:
             visitor:
             avatar:
             emoji:
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
+              - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
             requiredMeta:
-                - nick
-                - mail
+              - nick
+              - mail
             locale:
                 admin: Admin
                 placeholder:
+
 
         twikoo:
             envId:
             region:
             path:
             lang:
+
 
         giscus:
             repo:
@@ -106,6 +114,7 @@ params:
             inputPosition:
             lang:
 
+
         gitalk:
             owner:
             admin:
@@ -113,9 +122,11 @@ params:
             clientID:
             clientSecret:
 
+
         cusdis:
             host:
             id:
+
 
     widgets:
         homepage: []
@@ -134,6 +145,7 @@ params:
             enabled: false
             local: false
             src:
+
 
     colorScheme:
         # Display toggle
