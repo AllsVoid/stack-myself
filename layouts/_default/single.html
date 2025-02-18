@@ -43,4 +43,18 @@
 
 {{ define "right-sidebar" }}
     {{ if .Scratch.Get "hasWidget" }}{{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}{{ end}}
+    {{ if .Site.Params.article.showNavButtons }}
+    <div class="article-nav-buttons">
+        <button class="nav-button back-button" 
+        title="{{ T "back_to_home" | default "返回首页" }}"
+        aria-label="{{ T "back_to_home" | default "返回首页" }}">
+            {{ (resources.Get "icons/arrow-back.svg").Content | safeHTML }}
+        </button>
+        <button class="nav-button top-button"
+        title="{{ T "back_to_top" | default "返回顶部" }}"
+        aria-label="{{ T "back_to_top" | default "返回顶部" }}">
+            {{ (resources.Get "icons/arrow-up.svg").Content | safeHTML }}
+        </button>
+    </div>
+    {{ end }}
 {{ end }}

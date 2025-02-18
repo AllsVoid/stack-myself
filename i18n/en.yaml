@@ -37,6 +37,10 @@ article:
         one: "{{ .Count }} word"
         other: "{{ .Count }} words"
 
+    back_to_top: "Back to top"
+
+    back_to_home: "Back to home"
+
 notFound:
     title:
         other: Not Found

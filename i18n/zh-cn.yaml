@@ -30,6 +30,9 @@ article:
     wordCount:
         other: "共 {{ .Count }} 字"
 
+    back_to_top: "返回顶部"
+
+    back_to_home: "返回首页"
 notFound:
     title:
         other: 404 错误
