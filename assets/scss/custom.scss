@@ -41,7 +41,7 @@ $icon-size: $nav-button-size * 0.6 !default;
     &:hover {
         transform: translateY(-3px);
         box-shadow: var(--shadow-l3);
-        
+
         svg {
             transform: scale(1.15);
         }
@@ -50,10 +50,46 @@ $icon-size: $nav-button-size * 0.6 !default;
     @media (max-width: 768px) {
         width: $nav-button-mobile-size;
         height: $nav-button-mobile-size;
-        
+
         svg {
             width: $icon-size * 0.8;
             height: $icon-size * 0.8;
         }
     }
 }
+
+// ---------------------------------------
+// 代码块样式修改
+.highlight {
+    max-width: 102% !important;
+    background-color: var(--pre-background-color);
+    padding: var(--card-padding);
+    position: relative;
+    border-radius: 20px;
+    margin-left: -7px !important;
+    margin-right: -12px;
+    box-shadow: var(--shadow-l1) !important;
+
+    &:hover {
+        .copyCodeButton {
+            opacity: 1;
+        }
+    }
+
+    pre {
+        font-family: var(--code-font-family);
+        margin: initial;
+        padding: 0;
+        margin: 0;
+        width: auto;
+    }
+}
+// light模式下的代码块样式调整
+[data-scheme="light"] .article-content .highlight {
+    background-color: #fff9f3;
+}
+
+[data-scheme="light"] .chroma {
+    background-color: #fff9f3cc;
+}
+//-------------------------------------------
