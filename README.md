@@ -1,19 +1,24 @@
 ![image](https://user-images.githubusercontent.com/5889006/190859441-141b5f81-8483-40d2-bd96-ebf85616a46d.png)
 
-# Hugo Theme Stack
+# Hugo Theme Stack-myself
+## A mod theme of hugo-theme-stack
 
 <img align="right" width="150" alt="logo" src="https://user-images.githubusercontent.com/5889006/190859553-5b229b4f-c476-4cbd-928f-890f5265ca4c.png">
 
 Card-style Hugo theme designed for bloggers.
 
-## Quickstart
+Modified by [AllsVoid](https://github.com/AllsVoid)
 
-Use this template: [CaiJimmy/hugo-theme-stack-starter](https://github.com/CaiJimmy/hugo-theme-stack-starter)
+Origin repo: [CaiJimmy/hugo-theme-stack-starter](https://github.com/CaiJimmy/hugo-theme-stack-starter)
+
+## mods
+- add word counts
+- add busunzi script
+- add page control button
 
 ## Demo
 
-* Starter template demo: [demo.stack.jimmycai.com](https://demo.stack.jimmycai.com)
-* Dev build: [dev.stack.jimmycai.com](https://dev.stack.jimmycai.com)
+* My Website: [blog.cc.ykoky.com](https://blog.cc.ykoky.com)
 
 ## Documentation
 
