@@ -71,3 +71,6 @@ footer:
 
     designedBy:
         other: 主题 {{ .Theme }} 由 {{ .DesignedBy }} 设计
+
+    ModifiedBy:
+        other: 本站由 {{ .ModifiedBy }} 修改
