@@ -1,6 +1,6 @@
 {{ define "body-class" }}
     article-page
-    {{/* 
+    {{/*
         Enable the right sidebar if
             - Widget different from 'TOC' is enabled
             - TOC is enabled and not empty
@@ -19,7 +19,7 @@
     {{- $TOCEnabled := and (not $TOCManuallyDisabled) $TOCWidgetEnabled -}}
     {{- $hasTOC := ge (len .TableOfContents) 100 -}}
     {{- .Scratch.Set "TOCEnabled" (and $TOCEnabled $hasTOC) -}}
-    
+
     {{- .Scratch.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC)) -}}
 {{ end }}
 
@@ -31,7 +31,7 @@
     {{ end }}
 
     {{ partial "article/components/related-content" . }}
-     
+
     {{ if not (eq .Params.comments false) }}
         {{ partial "comments/include" . }}
     {{ end }}
@@ -45,7 +45,7 @@
     {{ if .Scratch.Get "hasWidget" }}{{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}{{ end}}
     {{ if .Site.Params.article.showNavButtons }}
     <div class="article-nav-buttons">
-        <button class="nav-button back-button" 
+        <button class="nav-button back-button"
         title="{{ T "back_to_home" | default "返回首页" }}"
         aria-label="{{ T "back_to_home" | default "返回首页" }}">
             {{ (resources.Get "icons/arrow-back.svg").Content | safeHTML }}

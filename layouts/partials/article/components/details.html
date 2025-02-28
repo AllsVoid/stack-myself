@@ -15,7 +15,7 @@
                 {{- .Title -}}
             </a>
         </h2>
-    
+
         {{ with .Params.description }}
         <h3 class="article-subtitle">
             {{ . }}
@@ -25,8 +25,9 @@
 
     {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
     {{ $showWordCount := .Params.wordCount | default (.Site.Params.article.wordCount) }}
+    {{ $showReadingCount := .Params.readingCount | default (.Site.Params.article.readingCount) }}
     {{ $showDate := not .Date.IsZero }}
-    {{ $showFooter := or $showDate $showReadingTime $showWordCount }}
+    {{ $showFooter := or $showDate $showReadingTime $showWordCount $showReadingCount }}
     {{ if $showFooter }}
     <footer class="article-time">
         {{ if $showDate }}
@@ -54,6 +55,15 @@
                 {{ T "article.wordCount" .WordCount }}
             </time>
         </div>
+        {{ end }}
+        {{/*  添加阅读次数统计  */}}
+        {{ if and $showReadingCount .Site.Params.busuanzi.enable }}
+        <div class="article-analysic">
+                    {{ partial "helper/icon" "read" }}
+                    <time class="article-words">
+                        <span id="busuanzi_container_page_pv">已阅读&nbsp<span id="busuanzi_value_page_pv"></span>&nbsp次</span>
+                    </time>
+                </div>
         {{ end }}
     </footer>
     {{ end }}
