@@ -36,6 +36,7 @@ params:
         readingTime: true
         wordCount: true
         showNavButtons: true
+        readingCount: true
         license:
             enabled: false
             default: Licensed under CC BY-NC-SA 4.0
