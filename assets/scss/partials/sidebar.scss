@@ -6,70 +6,73 @@
     }
 }
 
-.left-sidebar {
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    align-self: stretch;
-    gap: var(--sidebar-element-separation);
-    max-width: none;
-    width: 100%;
-    position: relative;
+// .left-sidebar {
+//     order: 2;
+//     display: flex;
+//     flex-direction: column;
+//     flex-shrink: 0;
+//     align-self: stretch;
+//     gap: var(--sidebar-element-separation);
+//     max-width: none;
+//     width: 100%;
+//     position: relative;
 
-    --sidebar-avatar-size: 100px;
-    --sidebar-element-separation: 20px;
-    --emoji-size: 40px;
-    --emoji-font-size: 20px;
+//     --sidebar-avatar-size: 100px;
+//     --sidebar-element-separation: 20px;
+//     --emoji-size: 40px;
+//     --emoji-font-size: 20px;
 
-    @include respond(md) {
-        width: auto;
-        padding-top: var(--main-top-padding);
-        padding-bottom: var(--main-top-padding);
-        max-height: 100vh;
-    }
+//     @include respond(md) {
+//         order: 1;
+//         width: auto;
+//         padding-top: var(--main-top-padding);
+//         padding-bottom: var(--main-top-padding);
+//         max-height: 100vh;
+//     }
 
-    @include respond(2xl) {
-        --sidebar-avatar-size: 120px;
-        --sidebar-element-separation: 25px;
-        --emoji-size: 40px;
-    }
+//     @include respond(2xl) {
+//         --sidebar-avatar-size: 120px;
+//         --sidebar-element-separation: 25px;
+//         --emoji-size: 40px;
+//     }
 
-    &.sticky {
-        top: 0;
-    }
+//     &.sticky {
+//         top: 0;
+//     }
 
-    &.compact {
-        --sidebar-avatar-size: 80px;
-        --emoji-size: 30px;
-        --emoji-font-size: 15px;
+//     &.compact {
+//         --sidebar-avatar-size: 80px;
+//         --emoji-size: 30px;
+//         --emoji-font-size: 15px;
 
-        header {
-            @include respond(lg) {
-                flex-direction: row;
-            }
+//         header {
+//             @include respond(lg) {
+//                 flex-direction: row;
+//             }
 
-            .site-meta {
-                gap: 5px;
-            }
+//             .site-meta {
+//                 gap: 5px;
+//             }
 
-            .site-name {
-                font-size: 1.4rem;
+//             .site-name {
+//                 font-size: 1.4rem;
 
-                @include respond(2xl) {
-                    font-size: 1.75rem;
-                }
-            }
+//                 @include respond(2xl) {
+//                     font-size: 1.75rem;
+//                 }
+//             }
 
-            .site-description {
-                font-size: 1.4rem;
-            }
-        }
-    }
-}
+//             .site-description {
+//                 font-size: 1.4rem;
+//             }
+//         }
+//     }
+// }
 
 .right-sidebar {
+    order: 1;
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: var(--widget-separation);
 
@@ -78,8 +81,61 @@
     }
 
     @include respond(lg) {
+        order: 2;
         padding-top: var(--main-top-padding);
         padding-bottom: var(--main-top-padding);
+    }
+
+    .left-sidebar-content {
+        --sidebar-avatar-size: 100px;
+        --sidebar-element-separation: 20px;
+        --emoji-size: 40px;
+        --emoji-font-size: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--sidebar-element-separation);
+        margin-bottom: var(--widget-separation);
+
+        @include respond(2xl) {
+            --sidebar-avatar-size: 120px;
+            --sidebar-element-separation: 25px;
+            --emoji-size: 40px;
+        }
+
+        &.compact {
+            --sidebar-avatar-size: 80px;
+            --emoji-size: 30px;
+            --emoji-font-size: 15px;
+
+            header {
+                @include respond(lg) {
+                    flex-direction: row;
+                }
+
+                .site-meta {
+                    gap: 5px;
+                }
+
+                .site-name {
+                    font-size: 1.4rem;
+
+                    @include respond(2xl) {
+                        font-size: 1.75rem;
+                    }
+                }
+
+                .site-description {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    .right-sidebar-widgets {
+        display: flex;
+        flex-direction: column;
+        gap: var(--widget-separation);
     }
 }
 
