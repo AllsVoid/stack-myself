@@ -1,20 +1,28 @@
 <div class="article-details">
-    {{ if .Params.categories }}
-    <header class="article-category">
-        {{ range (.GetTerms "categories") }}
-            <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>
-                {{ .LinkTitle }}
-            </a>
-        {{ end }}
-    </header>
-    {{ end }}
-
     <div class="article-title-wrapper">
         <h2 class="article-title">
             <a href="{{ .RelPermalink }}">
                 {{- .Title -}}
             </a>
         </h2>
+        {{/* 修改分类位置 */}}
+        {{/*  {{ if .Params.categories }}
+            <header class="article-category">
+                {{ range (.GetTerms "categories") }}
+                    <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>
+                        {{ .LinkTitle }}
+                    </a>
+                {{ end }}
+            </header>
+        {{ end }}  */}}
+         {{/* 修改标签位置 */}}
+        {{ if .Params.tags }}
+            <header class="article-tags">
+                {{ range (.GetTerms "tags") }}
+                    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+            </header>
+        {{ end }}
 
         {{ with .Params.description }}
         <h3 class="article-subtitle">
@@ -37,8 +45,16 @@
                     {{- .Date | time.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
                 </time>
             </div>
+            {{- if ne .Lastmod .Date -}}
+            <section class="article-lastmod">
+                {{/*  {{ partial "helper/icon" "clock" }}  */}}
+                <time class="article-lastmod-time">
+                    {{ T "article.lastUpdatedOn" }} {{ .Lastmod | time.Format ( or .Site.Params.dateFormat.lastUpdated "Jan 02, 2006" ) }}
+                </time>
+            </section>
+            {{- end -}}
         {{ end }}
-
+        {{/*  添加阅读时常  */}}
         {{ if $showReadingTime }}
             <div>
                 {{ partial "helper/icon" "clock" }}
@@ -65,17 +81,15 @@
                     </time>
                 </div>
         {{ end }}
-        {{- if ne .Lastmod .Date -}}
-        <section class="article-lastmod">
-            {{ partial "helper/icon" "clock" }}
-            <span>
-                {{ T "article.lastUpdatedOn" }} {{ .Lastmod | time.Format ( or .Site.Params.dateFormat.lastUpdated "Jan 02, 2006" ) }}
-            </span>
-        </section>
-        {{- end -}}
     </footer>
     {{ end }}
-
+    {{/* 添加文章预览 */}}
+    {{/*  {{ if .Params.preview }}
+        <div class="article-preview">
+            {{ .Params.preview }}
+        </div>
+    {{ end }}  */}}
+    {{/* 添加文章预览 */}}
     {{ if .IsTranslated }}
         <footer class="article-translations">
             {{ partial "helper/icon" "language" }}

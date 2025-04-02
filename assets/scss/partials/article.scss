@@ -34,11 +34,16 @@
             }
         }
 
+        /* 在标题下修改为显示标签而不是分类  */
         @for $i from 1 through length($defaultTagBackgrounds) {
             &:nth-child(#{length($defaultTagBackgrounds)}n + #{$i}) {
-                .article-category a {
+                .article-tags a {
                     background: nth($defaultTagBackgrounds, $i);
                     color: nth($defaultTagColors, $i);
+                    font-size: 1.5rem;
+                    padding: 4px 6px;
+                    border-radius: 9px;
+                    margin: 0 1px;
                 }
             }
         }
@@ -91,20 +96,24 @@
 }
 
 .article-time,
-.article-translations {
-    display: flex;
+.article-lastmod,
+.article-time--reading,
+.article-words,
+.article-analysic {
+    display: inline-flex;
+    align-items: center;
     color: var(--card-text-color-tertiary);
-    gap: 15px;
+    gap: 8px;
 
     svg {
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         stroke-width: 1.33;
         flex-shrink: 0;
     }
 
     time,
+    span,
     a {
         font-size: 1.4rem;
         color: var(--card-text-color-tertiary);
@@ -113,12 +122,21 @@
     & > div {
         display: inline-flex;
         align-items: center;
-        gap: 15px;
+        gap: 8px;
     }
 }
 
 .article-time {
+    display: flex;
     flex-wrap: wrap;
+    gap: 8px;
+    
+    & > div,
+    & > section {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
 }
 
 .article-translations {
@@ -127,7 +145,6 @@
     }
 }
 
-.article-category,
 .article-tags {
     display: flex;
     gap: 10px;
@@ -196,7 +213,8 @@
             }
         }
 
-        .article-time {
+        .article-time,
+        .article-lastmod {
             font-size: 1.4rem;
         }
 
