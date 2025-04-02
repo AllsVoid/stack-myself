@@ -40,54 +40,8 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Global font family
 */
 :root {
-    /* 西文字体栈 */
-    --sys-font-family:
-        'Inter',
-        system-ui, -apple-system,
-        'Segoe UI Variable',
-        'Roboto Flex',
-        sans-serif;
-
-    /* 中文字体栈 */
-    --zh-font-family:
-        'LXGW WenKai',
-        'MiSans',
-        'Sarasa Gothic SC',
-        'HarmonyOS Sans SC',
-        'Microsoft YaHei UI',
-        'PingFang SC',
-        serif;
-
-    --base-font-family:
-        var(--sys-font-family),
-        var(--zh-font-family);
-    /* 代码字体栈 */
-    --code-font-family:
-        'Maple Mono NF CN',
-        'JetBrains Mono',
-        'Cascadia Code',
-        'Sarasa Mono SC',
-        Monaco,
-        Consolas,
-        monospace;
-}
-
-/* 动态字体分配 */
-body {
-    font-family:
-        var(--sys-font-family),
-        var(--zh-font-family);
-    font-display: swap;
-}
-
-:lang(zh) {
-    font-family: var(--zh-font-family);
-    font-weight: normal;
-}
-
-pre, code {
-    font-family: var(--code-font-family);
-    font-feature-settings: 'ss01' on;
+    --base-font-family: "Lato", var(--sys-font-family), var(--zh-font-family), sans-serif;
+    --code-font-family: "Maple Mono NF CN", Monaco, Consolas, "Courier New", monospace;
 }
 
 /*
