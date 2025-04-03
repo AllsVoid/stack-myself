@@ -94,22 +94,12 @@ $icon-size: $nav-button-size * 0.6 !default;
 }
 //-------------------------------------------
 
-// 文章页字体
-body, .article-content {
-    font-family: "LXGW WenKai", sans-serif;
+body,
+.article-title
+.article-content,
+.article-page {
+    font-family: "LXGW WenKai Mono", monospace;
 }
-
-// 标题字体
-body, .article-title {
-    font-family: "LXGW WenKai", sans-serif;
-}
-
-
-// 首页字体
-body, .article-page {
-    font-family: "LXGW WenKai", sans-serif;
-}
-
 code, pre {
     font-family: "Maple Mono NF CN", monospace;
 }
