@@ -84,6 +84,7 @@ $icon-size: $nav-button-size * 0.6 !default;
         width: auto;
     }
 }
+
 // light模式下的代码块样式调整
 [data-scheme="light"] .article-content .highlight {
     background-color: #fff9f3;
@@ -92,14 +93,18 @@ $icon-size: $nav-button-size * 0.6 !default;
 [data-scheme="light"] .chroma {
     background-color: #fff9f3cc;
 }
+
 //-------------------------------------------
 
 body,
-.article-title
+.article-title,
 .article-content,
 .article-page {
-    font-family: "LXGW WenKai Mono", monospace;
+    font-family: "LXGW WenKai Mono Screen", monospace;
+    font-weight: normal;
 }
-code, pre {
+
+code,
+pre {
     font-family: "Maple Mono NF CN", monospace;
 }
