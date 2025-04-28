@@ -2,7 +2,8 @@
 {{- $context := .Context -}}
 {{- with (index .Context.Site.Params.widgets $scope) -}}
     <aside class="sidebar right-sidebar sticky">
-        <!-- 添加原左侧边栏的内容 -->
+        <!-- 只在非文章页面显示左侧边栏内容 -->
+        {{ if ne $context.Kind "page" }}
         <div class="left-sidebar-content">
             <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="{{ T `toggleMenu` }}">
                 <span class="hamburger-box">
@@ -106,8 +107,9 @@
                 </li>
             </ol>
         </div>
+        {{ end }}
 
-        <!-- 原右侧边栏的小部件 -->
+        <!-- 右侧边栏的小部件始终显示 -->
         <div class="right-sidebar-widgets">
             {{ range $widget := . }}
                 {{ if templates.Exists (printf "partials/widget/%s.html" .type) }}
