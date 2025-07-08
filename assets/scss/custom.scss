@@ -100,8 +100,9 @@ body,
 .article-title,
 .article-content,
 .article-page {
-    font-family: "LXGW WenKai Mono Screen", monospace;
+    font-family: "Noto Sans CJK", sans-serif;
     font-weight: normal;
+    font-feature-settings: "hwid" on;
 }
 
 code,
